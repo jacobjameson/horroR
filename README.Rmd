@@ -79,7 +79,7 @@ pal <- horroR_palette("Suspiria", 21, type = "continuous")
 image(volcano, col = pal)
 ```
 
-```{r, graph, fig.height = 5}
+```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
 library("gridExtra")
 library("scales")
 data("diamonds")

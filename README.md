@@ -100,4 +100,4 @@ grid.arrange(p1_npg, p2_npg, ncol = 2)
 #> `geom_smooth()` using formula = 'y ~ x'
 ```
 
-![](figure/graph-1.png)
+<img src="figure/unnamed-chunk-2-1.png" width="800" height="300" />
