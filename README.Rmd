@@ -42,7 +42,7 @@ names(horroR_palettes)
 ### Suspiriam (2018)
 
 
-![](posters/Suspiria.jpg)
+![](posters/Suspiria.jpg){height=50%, width=50%}
 
 ```{r, Suspiria}
 horroR_palette("Suspiria")
@@ -50,7 +50,7 @@ horroR_palette("Suspiria")
 
 ### Midsommar (2019)
 
-![](posters/Midsommar.jpeg)
+![](posters/Midsommar.jpeg){height=50%, width=50%}
 
 
 
@@ -61,7 +61,7 @@ horroR_palette("Midsommar")
 ### The Neon Demono (2016)
 
 
-![](posters/The Neon Demono.jpg)
+![](posters/The Neon Demono.jpg){height=50%, width=50%}
 
 
 ```{r, TheNeonDemon}
@@ -80,7 +80,7 @@ pal <- horroR_palette("Suspiria", 21, type = "continuous")
 image(volcano, col = pal)
 ```
 
-```{r, graph, fig.height = 5}
+```{r, graph, fig.width = 5}
 library("gridExtra")
 library("scales")
 data("diamonds")
