@@ -28,6 +28,8 @@ names(horroR_palettes)
 
 ### Suspiriam (2018)
 
+![](posters/Suspiria.jpg)
+
 ``` r
 horroR_palette("Suspiria")
 ```
@@ -36,6 +38,8 @@ horroR_palette("Suspiria")
 
 ### Midsommar (2019)
 
+![](posters/Midsommar.jpeg)
+
 ``` r
 horroR_palette("Midsommar")
 ```
@@ -43,6 +47,8 @@ horroR_palette("Midsommar")
 ![](figure/Midsommar-1.png)
 
 ### The Neon Demono (2016)
+
+![](posters/The%20Neon%20Demono.jpg)
 
 ``` r
 horroR_palette("TheNeonDemon")
