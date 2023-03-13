@@ -94,4 +94,4 @@ grid.arrange(p1_npg, p2_npg, ncol = 2)
 #> `geom_smooth()` using formula = 'y ~ x'
 ```
 
-![](figure/zissou_heatmap-1.png)
+![](figure/graph-1.png)
