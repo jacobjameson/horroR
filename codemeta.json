@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "https://doi.org/10.5063/schema/codemeta-2.0",
+    "http://schema.org"
+  ],
+  "@type": "SoftwareSourceCode",
+  "identifier": "horroR",
+  "description": "Palettes generated mostly from Horror movies.",
+  "name": "horroR: A Horror Movie Palette Generator",
+  "codeRepository": "https://github.com/jacobjameson/horroR",
+  "issueTracker": "https://github.com/jacobjameson/horroR/issues",
+  "datePublished": "2023-03-13",
+  "license": "https://spdx.org/licenses/MIT",
+  "version": "0.3.4",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "version": "3.4.4",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R version 3.4.4 (2018-03-15)",
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Central R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Jacob",
+      "familyName": "Jameson",
+      "email": "jacobjameson@g.harvard.edu"
+      },
+  ],
+  "maintainer": {
+    "@type": "Person",
+    "givenName": "Jacob",
+    "familyName": "Jameson",
+    "email": "jacobjameson@g.harvard.edu"
+  },
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "ggplot2",
+      "name": "ggplot2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Central R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      }
+    }
+  ],
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "R",
+      "name": "R",
+      "version": "3.0"
+    }
+  ],
+  "releaseNotes": "https://github.com/jacobjameson/horroR/blob/master/NEWS",
+  "readme": "https://github.com/jacobjameson/horroR/blob/master/README.md",
+  "fileSize": "5.588KB"
+}

@@ -1,0 +1,88 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "figure/",
+  fig.height = 1
+)
+```
+
+# Horror Movie Insprired Palettes
+
+
+## Installation
+
+```r
+install.packages("horroR")
+```
+
+__Or the development version__
+
+```r
+devtools::install_github("jacobjameson/horroR")
+```
+
+## Usage
+
+```{r, palettes_dummy}
+library("horroR")
+names(horroR_palettes)
+```
+
+## Palettes
+
+### Suspiriam (2018)
+
+
+```{r, Suspiria}
+wes_palette("Suspiria")
+```
+
+### Midsommar (2019)
+
+```{r, Midsommar}
+wes_palette("Midsommar")
+```
+
+### The Neon Demono (2016)
+
+```{r, TheNeonDemon}
+wes_palette("TheNeonDemon")
+```
+
+```{r, ggplot1, fig.height = 3}
+library("ggplot2")
+ggplot(mtcars, aes(factor(cyl), fill=factor(vs))) +  geom_bar() +
+  scale_fill_manual(values = wes_palette("TheNeonDemon"))
+```
+
+### The Life Aquatic with Steve Zissou (2004)
+
+```{r, lifeaquatic}
+wes_palette("Zissou1")
+```
+
+
+```{r, volcano, fig.height = 3}
+pal <- wes_palette("TheNeonDemon", 21, type = "continuous")
+image(volcano, col = pal)
+```
+
+```{r, zissou_heatmap, fig.height = 3}
+pal <- wes_palette("Midsommar", 100, type = "continuous")
+# heatmap is a local dataset
+ggplot(heatmap, aes(x = X2, y = X1, fill = value)) +
+  geom_tile() + 
+  scale_fill_gradientn(colours = pal) + 
+  scale_x_discrete(expand = c(0, 0)) +
+  scale_y_discrete(expand = c(0, 0)) + 
+  coord_equal() 
+```
