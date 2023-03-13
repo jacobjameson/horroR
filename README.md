@@ -66,14 +66,33 @@ image(volcano, col = pal)
 ![](figure/volcano-1.png)
 
 ``` r
-pal <- horroR_palette("Midsommar", 100, type = "continuous")
-# heatmap is a local dataset
-ggplot(heatmap, aes(x = X2, y = X1, fill = value)) +
-  geom_tile() + 
-  scale_fill_gradientn(colours = pal) + 
-  scale_x_discrete(expand = c(0, 0)) +
-  scale_y_discrete(expand = c(0, 0)) + 
-  coord_equal() 
+library("horroR")
+library("gridExtra")
+library("scales")
+data("diamonds")
+
+p1 <- ggplot(
+  subset(diamonds, carat >= 2.2),
+  aes(x = table, y = price, colour = cut)
+) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "loess", alpha = 0.05, size = 1, span = 1) +
+  theme_bw()
+#> Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+#> ℹ Please use `linewidth` instead.
+
+p2 <- ggplot(
+  subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
+  aes(x = depth, fill = cut)
+) +
+  geom_histogram(colour = "black", binwidth = 1, position = "dodge") +
+  theme_bw()
+
+p1_npg <- p1 + scale_fill_manual(values = horroR_palette("Midsommar"))
+p2_npg <- p2 + scale_fill_manual(values = horroR_palette("Midsommar"))
+
+grid.arrange(p1_npg, p2_npg, ncol = 2)
+#> `geom_smooth()` using formula = 'y ~ x'
 ```
 
 ![](figure/zissou_heatmap-1.png)
