@@ -22,7 +22,7 @@ to automatically interpolate between colours.
 A vector of colours.
 }
 \description{
-These are a handful of color palettes from Wes Anderson movies.
+These are a handful of color palettes from horror movies.
 }
 \examples{
 horroR_palette("Suspiria")
