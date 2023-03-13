@@ -59,14 +59,13 @@ ggplot(mtcars, aes(factor(cyl), fill=factor(vs))) +  geom_bar() +
 ![](figure/ggplot1-1.png)
 
 ``` r
-pal <- horroR_palette("TheNeonDemon", 21, type = "continuous")
+pal <- horroR_palette("Suspiria", 21, type = "continuous")
 image(volcano, col = pal)
 ```
 
 ![](figure/volcano-1.png)
 
 ``` r
-library("horroR")
 library("gridExtra")
 library("scales")
 data("diamonds")
@@ -76,7 +75,7 @@ p1 <- ggplot(
   aes(x = table, y = price, colour = cut)
 ) +
   geom_point(alpha = 0.7) +
-  geom_smooth(method = "loess", alpha = 0.05, size = 1, span = 1) +
+  geom_smooth(method = "loess", alpha = 0.09, size = 1, span = 1) +
   theme_bw()
 #> Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
 #> ℹ Please use `linewidth` instead.
@@ -88,7 +87,7 @@ p2 <- ggplot(
   geom_histogram(colour = "black", binwidth = 1, position = "dodge") +
   theme_bw()
 
-p1_npg <- p1 + scale_fill_manual(values = horroR_palette("Midsommar"))
+p1_npg <- p1 + scale_color_manual(values = horroR_palette("Midsommar"))
 p2_npg <- p2 + scale_fill_manual(values = horroR_palette("Midsommar"))
 
 grid.arrange(p1_npg, p2_npg, ncol = 2)
