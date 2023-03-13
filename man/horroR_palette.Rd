@@ -25,10 +25,10 @@ A vector of colours.
 These are a handful of color palettes from Wes Anderson movies.
 }
 \examples{
-wes_palette("Suspiria")
-wes_palette("Midsommar")
-wes_palette("TheNeonDemon")
-wes_palette("TheNeonDemon", 3)
+horroR_palette("Suspiria")
+horroR_palette("Midsommar")
+horroR_palette("TheNeonDemon")
+horroR_palette("TheNeonDemon", 3)
 
 # If you need more colours than normally found in a palette, you
 # can use a continuous palette to interpolate between existing

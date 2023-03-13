@@ -33,7 +33,7 @@ devtools::install_github("jacobjameson/horroR")
 ## Usage
 
 ```{r, palettes_dummy}
-library("horroR")
+#library("horroR")
 names(horroR_palettes)
 ```
 
