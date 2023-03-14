@@ -11,7 +11,7 @@ horroR_palettes <- list(
   TheShining = c("#E13D29", "#2E2928", "#9E978E", "#E3DCC1", "#D65108", "#2B4E72", "#DFBBB1", "#8B6145", "#7D202E", "#000000"),
   TheNeonDemon = c("#1f1b61", '#da367a', '#5335e3', '#872562', '#ead6d6', '#7c151b', '#96a4f0'),
   Midsommar = c("#65a5c1", '#825545', '#e6cb3d', '#b34d63', '#aed5ae'),
-  silenceofthelambs = c('#320f0d', '#cbd3d8', '#c51216', '#d9943f')
+  Silenceofthelambs = c('#320f0d', '#cbd3d8', '#c51216', '#d9943f')
   )
 
 #' A Horror movie palette generator

@@ -115,3 +115,16 @@ p2_npg <- p2 + scale_fill_manual(values = horroR_palette("Midsommar"))
 
 grid.arrange(p1_npg, p2_npg, ncol = 2)
 ```
+
+
+
+```{r}
+p <- ggplot(
+  data=subset(diamonds, cut != 'Fair'), 
+  aes(x=price, group=cut, fill=cut)) +
+    geom_density(adjust=1.5, position="fill") +
+  theme_bw()
+
+p + scale_fill_manual(values = horroR_palette("Silenceofthelambs"))
+```
+

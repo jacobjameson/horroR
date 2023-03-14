@@ -8,7 +8,8 @@ horroR_palette(name, n, type = c("discrete", "continuous"))
 }
 \arguments{
 \item{name}{Name of desired palette. Choices are:
-\code{Suspiria}, \code{TheNeonDemon},  \code{Midsommar}}
+\code{Suspiria}, \code{TheNeonDemon},  \code{Midsommar},
+\code{Silenceofthelambs}}
 
 \item{n}{Number of colors desired. Unfortunately most palettes now only
 have 4 or 5 colors. But hopefully we'll add more palettes soon. All color
