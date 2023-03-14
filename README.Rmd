@@ -72,7 +72,7 @@ horroR_palette("TheNeonDemon")
 ![](posters/SOTL.jpeg){width=300}
 
 
-```{r, TheNeonDemon}
+```{r, SOTl}
 horroR_palette("silenceofthelambs")
 ```
 

@@ -5,7 +5,6 @@
 ## Installation
 
 ``` r
-# not available yet :(
 install.packages("horroR")
 ```
 
@@ -22,7 +21,7 @@ library("horroR")
 names(horroR_palettes)
 #> [1] "Suspiria"             "Coraline"             "Scream"              
 #> [4] "NightmareOnElmStreet" "TheShining"           "TheNeonDemon"        
-#> [7] "Midsommar"
+#> [7] "Midsommar"            "silenceofthelambs"
 ```
 
 ## Palettes
@@ -56,6 +55,14 @@ horroR_palette("TheNeonDemon")
 ```
 
 ![](figure/TheNeonDemon-1.png)
+
+<img src="posters/SOTL.jpeg" width="300" />
+
+``` r
+horroR_palette("silenceofthelambs")
+```
+
+![](figure/SOTl-1.png)
 
 ``` r
 library("ggplot2")
