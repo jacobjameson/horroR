@@ -38,7 +38,7 @@ names(horroR_palettes)
 
 ## Palettes
 
-### Suspiria (2018)
+### Suspiria (1977)
 
 
 ![](posters/Suspiria.jpg){width=300}
@@ -66,6 +66,17 @@ horroR_palette("Midsommar")
 ```{r, TheNeonDemon}
 horroR_palette("TheNeonDemon")
 ```
+
+
+
+![](posters/SOTL.jpeg){width=300}
+
+
+```{r, TheNeonDemon}
+horroR_palette("silenceofthelambs")
+```
+
+
 
 ```{r, ggplot1, fig.height = 3}
 library("ggplot2")
