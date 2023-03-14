@@ -21,7 +21,7 @@ library("horroR")
 names(horroR_palettes)
 #> [1] "Suspiria"             "Coraline"             "Scream"              
 #> [4] "NightmareOnElmStreet" "TheShining"           "TheNeonDemon"        
-#> [7] "Midsommar"            "silenceofthelambs"
+#> [7] "Midsommar"            "Silenceofthelambs"
 ```
 
 ## Palettes
@@ -59,7 +59,7 @@ horroR_palette("TheNeonDemon")
 <img src="posters/SOTL.jpeg" width="300" />
 
 ``` r
-horroR_palette("silenceofthelambs")
+horroR_palette("Silenceofthelambs")
 ```
 
 ![](figure/SOTl-1.png)
@@ -109,3 +109,15 @@ grid.arrange(p1_npg, p2_npg, ncol = 2)
 ```
 
 <img src="figure/unnamed-chunk-2-1.png" width="800" height="300" />
+
+``` r
+p <- ggplot(
+  data=subset(diamonds, cut != 'Fair'), 
+  aes(x=price, group=cut, fill=cut)) +
+    geom_density(adjust=1.5, position="fill") +
+  theme_bw()
+
+p + scale_fill_manual(values = horroR_palette("Silenceofthelambs"))
+```
+
+![](figure/unnamed-chunk-3-1.png)

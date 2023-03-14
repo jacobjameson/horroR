@@ -73,7 +73,7 @@ horroR_palette("TheNeonDemon")
 
 
 ```{r, SOTl}
-horroR_palette("silenceofthelambs")
+horroR_palette("Silenceofthelambs")
 ```
 
 
