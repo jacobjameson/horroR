@@ -5,6 +5,7 @@
 ## Installation
 
 ``` r
+# not available yet :(
 install.packages("horroR")
 ```
 
