@@ -26,7 +26,7 @@ names(horroR_palettes)
 
 ## Palettes
 
-### Suspiria (2018)
+### Suspiria (1977)
 
 <img src="posters/Suspiria.jpg" width="300" />
 
