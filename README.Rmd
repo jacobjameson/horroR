@@ -14,7 +14,12 @@ knitr::opts_chunk$set(
 )
 ```
 
+
+![](logo.png){width=600}
+
+
 # Horror Movie Insprired Palettes
+
 
 
 ## Installation
