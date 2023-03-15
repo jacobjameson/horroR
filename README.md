@@ -1,6 +1,6 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<img src="logo.png" width="600" />
+<img src="logo.png" width="100" />
 
 # Horror Movie Insprired Palettes
 
