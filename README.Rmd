@@ -10,7 +10,9 @@ output:
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  fig.path = "figure/"
+  fig.path = "figure/",
+  warning = FALSE,
+  message = FALSE
 )
 ```
 
@@ -18,9 +20,17 @@ knitr::opts_chunk$set(
 ![](logo.png){width=600}
 
 
-# Horror Movie Insprired Palettes
+# horroR: Horror Movie Color Palettes and Themes for R
 
+Create atmospheric, creepy data visualizations with color palettes inspired by horror movies, custom ggplot2 themes, and special effects.
 
+## Features
+
+- **30+ Horror Movie Palettes**: Suspiria, The Shining, Get Out, Hereditary, and more
+- **10 Mood-Based Palettes**: blood, ghostly, demonic, neonslasher, etc.
+- **9 ggplot2 Themes**: theme_horror, theme_slasher, theme_supernatural, and more
+- **Special Effects**: Blood drips, fog, scratches, glitch effects, and more
+- **Easy-to-use Scale Functions**: scale_fill_horror(), scale_color_horror()
 
 ## Installation
 
@@ -34,17 +44,37 @@ __Or the development version__
 devtools::install_github("jacobjameson/horroR")
 ```
 
-## Usage
+## Quick Start
 
-```{r, palettes_dummy}
+```{r, quick-start}
 library("horroR")
-names(horroR_palettes)
+library("ggplot2")
+
+# See all available palettes
+list_palettes()
 ```
 
 ## Palettes
 
-### Suspiria (1977)
+### Horror Movie Palettes
 
+```{r, show-movies, fig.height=8}
+# View movie palettes
+show_palettes(c("Suspiria", "TheShining", "GetOut", "Hereditary",
+                "Midsommar", "TheNeonDemon", "Halloween", "Scream"))
+```
+
+### Mood-Based Palettes
+
+```{r, show-moods, fig.height=6}
+# View mood palettes
+show_palettes(c("blood", "ghostly", "demonic", "neonslasher",
+                "forestwitch", "vintage"))
+```
+
+### Individual Palette Preview
+
+#### Suspiria (1977)
 
 ![](posters/Suspiria.jpg){width=300}
 
@@ -52,84 +82,190 @@ names(horroR_palettes)
 horroR_palette("Suspiria")
 ```
 
-### Midsommar (2019)
+#### The Shining (1980)
 
-![](posters/Midsommar.jpeg){width=300}
-
-
-
-```{r, Midsommar}
-horroR_palette("Midsommar")
+```{r, TheShining}
+horroR_palette("TheShining")
 ```
 
-### The Neon Demono (2016)
+#### Get Out (2017)
 
-
-![](posters/The Neon Demono.jpg){width=300}
-
-
-```{r, TheNeonDemon}
-horroR_palette("TheNeonDemon")
+```{r, GetOut}
+horroR_palette("GetOut")
 ```
 
+#### Hereditary (2018)
 
-
-![](posters/SOTL.jpeg){width=300}
-
-
-```{r, SOTl}
-horroR_palette("Silenceofthelambs")
+```{r, Hereditary}
+horroR_palette("Hereditary")
 ```
 
+## Themes
 
+horroR includes 9 creepy ggplot2 themes:
 
-```{r, ggplot1, fig.height = 3}
-library("ggplot2")
-ggplot(mtcars, aes(factor(cyl), fill=factor(vs))) +  geom_bar() +
-  scale_fill_manual(values = horroR_palette("TheNeonDemon"))
+```{r, list-themes}
+list_themes()
 ```
 
+### Theme Examples
+
+```{r, theme-horror, fig.height=4}
+ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 3) +
+  labs(title = "The Horror Theme", subtitle = "Dark and bloody") +
+  scale_color_horror("blood") +
+  theme_horror()
+```
+
+```{r, theme-slasher, fig.height=4}
+ggplot(mtcars, aes(x = factor(cyl), fill = factor(cyl))) +
+  geom_bar() +
+  labs(title = "The Slasher Theme", subtitle = "80s slasher vibes") +
+  scale_fill_horror("Carrie") +
+  theme_slasher()
+```
+
+```{r, theme-supernatural, fig.height=4}
+ggplot(mtcars, aes(x = wt, y = mpg, color = factor(gear))) +
+  geom_point(size = 3) +
+  labs(title = "Supernatural Theme", subtitle = "Ethereal and ghostly") +
+  scale_color_horror("ghostly") +
+  theme_supernatural()
+```
+
+```{r, theme-neon, fig.height=4}
+ggplot(diamonds[sample(nrow(diamonds), 1000), ], aes(x = carat, y = price, color = cut)) +
+  geom_point(alpha = 0.7) +
+  labs(title = "Neon Demon Theme", subtitle = "Neon-noir horror") +
+  scale_color_horror("TheNeonDemon") +
+  theme_neon()
+```
+
+```{r, theme-occult, fig.height=4}
+ggplot(mtcars, aes(x = factor(cyl), fill = factor(vs))) +
+  geom_bar(position = "dodge") +
+  labs(title = "Occult Theme", subtitle = "Dark rituals and gold") +
+  scale_fill_horror("occult") +
+  theme_occult()
+```
+
+```{r, theme-witch, fig.height=4}
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point(size = 3, color = "#4a5a4a") +
+  geom_smooth(method = "lm", color = "#6a8a5a", fill = "#3a4a3a") +
+  labs(title = "Forest Witch Theme", subtitle = "Folk horror in the woods") +
+  theme_witch()
+```
+
+## Scale Functions
+
+Easy integration with ggplot2:
+
+```{r, scales-discrete, fig.height=4}
+# Discrete scales
+ggplot(mtcars, aes(x = factor(cyl), fill = factor(cyl))) +
+  geom_bar() +
+  scale_fill_horror("Suspiria") +
+  theme_horror()
+```
+
+```{r, scales-continuous, fig.height=4}
+# Continuous scales
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_tile() +
+  scale_fill_horror_c("blood") +
+  theme_horror() +
+  labs(title = "Continuous Horror Scale")
+```
+
+## Special Effects
+
+Add creepy effects to your plots:
+
+```{r, effects-example, fig.height=5}
+# Blood drips and fog
+p <- ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point(color = "#8b0000", size = 3) +
+  labs(title = "Something is watching...") +
+  theme_horror()
+
+# Note: Effects work best when viewed in a graphics device
+p
+```
+
+### Available Effects
+
+```{r, list-effects}
+list_effects()
+```
+
+### Spooky Messages
+
+```{r, spooky}
+# Get random creepy messages for your plots
+spooky_message()
+spooky_message()
+spooky_message()
+```
+
+## Utility Functions
+
+```{r, utilities}
+# Get a specific color from a palette
+horror_color("blood", 4)
+
+# Make any color creepier
+creepify_color("#00ff00")  # Creepy green
+creepify_color("pink", darkness = 0.5)
+```
+
+## Full Gallery
+
+### Continuous Palette Example
 
 ```{r, volcano, fig.height = 5}
 pal <- horroR_palette("Suspiria", 21, type = "continuous")
 image(volcano, col = pal)
 ```
 
-```{r, fig.width = 10.67, fig.height = 4, out.width = 800, out.height = 300, dpi = 150}
-library("gridExtra")
-library("scales")
-data("diamonds")
+### Diamond Analysis with Horror Themes
 
-p1 <- ggplot(
-  subset(diamonds, carat >= 2.2),
-  aes(x = table, y = price, colour = cut)
+```{r, diamonds-horror, fig.height = 4}
+ggplot(
+  data = subset(diamonds, cut != 'Fair'),
+  aes(x = price, group = cut, fill = cut)
 ) +
-  geom_point(alpha = 0.7) +
-  geom_smooth(method = "loess", alpha = 0.09, size = 1, span = 1) +
-  theme_bw()
-
-p2 <- ggplot(
-  subset(diamonds, carat > 2.2 & depth > 55 & depth < 70),
-  aes(x = depth, fill = cut)
-) +
-  geom_histogram(colour = "black", binwidth = 1, position = "dodge") +
-  theme_bw()
-
-p1_npg <- p1 + scale_color_manual(values = horroR_palette("Midsommar"))
-p2_npg <- p2 + scale_fill_manual(values = horroR_palette("Midsommar"))
-
-grid.arrange(p1_npg, p2_npg, ncol = 2)
+  geom_density(adjust = 1.5, position = "fill") +
+  scale_fill_horror("TheShining") +
+  theme_vintage() +
+  labs(title = "Diamond Prices by Cut", subtitle = "A vintage horror perspective")
 ```
 
+### Heatmap with Blood Palette
 
-
-```{r}
-p <- ggplot(
-  data=subset(diamonds, cut != 'Fair'), 
-  aes(x=price, group=cut, fill=cut)) +
-    geom_density(adjust=1.5, position="fill") +
-  theme_bw()
-
-p + scale_fill_manual(values = horroR_palette("Silenceofthelambs"))
+```{r, heatmap-blood, fig.height = 5}
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_raster() +
+  scale_fill_horror_c("demonic") +
+  theme_occult() +
+  labs(title = "Old Faithful Eruptions", subtitle = "The ritual continues...")
 ```
 
+## All Available Palettes
+
+### Movie Palettes
+Suspiria, Coraline, Scream, NightmareOnElmStreet, TheShining, TheNeonDemon,
+Midsommar, Silenceofthelambs, TheExorcist, GetOut, Hereditary, TheWitch,
+ItFollows, Halloween, TheRing, Us, AQuietPlace, Carrie, Psycho,
+TheTexasChainsawMassacre, Alien, TheThing, Jaws, Poltergeist, TheOmen,
+Rosemary, Blair, Conjuring, Insidious, Sinister
+
+### Mood Palettes
+blood, ghostly, demonic, forestwitch, neonslasher, vintage, asylum, occult,
+nightmare, decay
+
+## Contributing
+
+Found a bug or want to add a palette from your favorite horror movie?
+Open an issue or PR at https://github.com/jacobjameson/horroR
