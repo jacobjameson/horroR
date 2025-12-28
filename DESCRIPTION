@@ -1,16 +1,27 @@
 Package: horroR
-Title: A Horror Movie Palette Generator
-Description: Palettes generated mostly from Horror movies.
-Date: 2023-03-13
-Version: 0.3.6.9000
+Title: Horror Movie Color Palettes and Themes for Data Visualization
+Description: A comprehensive collection of color palettes inspired by horror movies,
+    along with ggplot2 themes and special effects to create atmospheric,
+    creepy data visualizations. Includes 30+ movie-inspired palettes (The Shining,
+    Suspiria, Get Out, Hereditary, etc.), 10 mood-based palettes (blood, ghostly,
+    demonic, etc.), 9 horror-themed ggplot2 themes, and special effects like
+    blood drips, fog, scratches, and glitch effects.
+Date: 2024-12-28
+Version: 0.4.0.9000
 Authors@R: c(person("Jacob", "Jameson", role = c("aut", "cre"),
     email = "jacobjameson@g.harvard.edu"))
 Depends:
     R (>= 3.0)
+Imports:
+    grDevices,
+    graphics,
+    grid,
+    stats
 License: MIT + file LICENSE
 LazyData: true
 Suggests:
-    ggplot2
+    ggplot2 (>= 3.0.0)
 URL: https://github.com/jacobjameson/horroR
 BugReports: https://github.com/jacobjameson/horroR/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 7.2.3
+Encoding: UTF-8

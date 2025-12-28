@@ -1,2 +1,63 @@
+Version 0.4.0
+==============
+
+Major update with extensive new features for creating atmospheric horror-themed visualizations.
+
+NEW FEATURES:
+
+* Added 22 new horror movie palettes:
+  - TheExorcist, GetOut, Hereditary, TheWitch, ItFollows, Halloween, TheRing,
+    Us, AQuietPlace, Carrie, Psycho, TheTexasChainsawMassacre, Alien, TheThing,
+    Jaws, Poltergeist, TheOmen, Rosemary, Blair, Conjuring, Insidious, Sinister
+
+* Added 10 mood-based palettes:
+  - blood, ghostly, demonic, forestwitch, neonslasher, vintage, asylum, occult,
+    nightmare, decay
+
+* Added ggplot2 scale functions for easy integration:
+  - scale_fill_horror() / scale_color_horror() - discrete scales
+  - scale_fill_horror_c() / scale_color_horror_c() - continuous scales
+  - scale_fill_horror_b() / scale_color_horror_b() - binned scales
+
+* Added 9 ggplot2 theme functions:
+  - theme_horror() - dark base theme with blood-red accents
+  - theme_slasher() - high contrast 80s slasher style
+  - theme_supernatural() - ethereal, ghostly appearance
+  - theme_vintage() - old film sepia tones
+  - theme_neon() - vibrant neon-noir horror
+  - theme_asylum() - cold, clinical psychological horror
+  - theme_occult() - dark purple and gold
+  - theme_witch() - forest greens and earthy browns
+  - theme_void_horror() - minimalist cosmic horror
+
+* Added special effects functions:
+  - blood_drips() - dripping blood effect from plot top
+  - scratch_marks() - diagonal scratch marks overlay
+  - vignette_effect() - darkened edges/corners
+  - fog_effect() - misty fog atmosphere
+  - glitch_effect() - digital glitch/corruption bars
+  - static_effect() - TV static noise overlay
+  - creepy_text() - horror-styled text annotations
+
+* Added utility functions:
+  - list_palettes() - view all available palettes by category
+  - list_themes() - view all available themes with descriptions
+  - list_effects() - view all available special effects
+  - preview_palette() - visual preview of a palette
+  - show_palettes() - display multiple palettes at once
+  - horror_color() - get specific color from palette by index
+  - creepify_color() - darken and desaturate any color
+  - spooky_message() - random creepy messages for annotations
+
+IMPROVEMENTS:
+
+* Comprehensive documentation and examples in README
+* Better organized codebase with separate files for scales, themes, and effects
+
+
 Version 0.3
 ==============
+
+* Initial CRAN release
+* Basic horror movie palettes: Suspiria, Coraline, Scream, NightmareOnElmStreet,
+  TheShining, TheNeonDemon, Midsommar, Silenceofthelambs
